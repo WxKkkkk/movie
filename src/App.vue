@@ -1,32 +1,33 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div>
+    <router-view></router-view>
+
+    <footBar v-if="$store.state.isShow"></footBar>
+    <!-- <child></child> -->
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+// import child from '@/components/child'
+import footBar from '@/components/footBar'
+export default {
+  data () {
+    return {
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
     }
+  },
+  methods: {
+
+  },
+  components: {
+    footBar
+    // child
   }
 }
+</script>
+
+<style lang="scss" scoped>
+  *{
+    margin-bottom: 50px;
+  }
 </style>
